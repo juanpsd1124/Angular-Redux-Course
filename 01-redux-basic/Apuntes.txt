@@ -1,0 +1,31 @@
+
+Que es Redux?
+
+    Es un patron para el manejo de la informacion el cual permite:
+
+        1. Saber el estado de la aplicacion
+        2. Como se encuentra determinada variable?
+        3. Quien cambio esa variable u otra variable?
+        4. Como cambio la informacion, en que momento y otra informacion relacionada al estado de su aplicacion
+
+
+Ideas principales:
+
+        Toda la data de la aplicacion se encuntra en una estructura previamente definida
+        Toda la informacion se encontrara en un unico lugar llamado Store
+        El Store jamas se modifica de forma directa
+        Interacciones de usuario y/o codigo dispara acciones que describen que sucedio
+        El valor actual de la informacion se llama estado - State
+        Un nuevo estado es creado, en base a la combinación del viejo estado y una accion por una funcion llamada reducer
+
+
+Action: Es la unica fuente de informacion que se envia por interacciones de usuario o programa. Por lo feneral se buscan que sean lo mas simples posibles.
+Solo tienen dos propiedades que son el "type" y "payload". La accion describe lo que deberia realizar el reducer
+
+Reducer: Es una funcion que unicamente recibe dos argumentos y retorna un nuevo estado. Los dos argumentos recibidos son el "old state" y el "action"
+
+State: El state es solo de lectura y nunca debe ser mutado de forma directa.
+
+Store: Es un objeto que contiene el estado de la aplicacion y permita la lectura del estado mediante la funcion getState(), 
+ademas permite crear un nuevo estado utilizando la funcion dispatch(action), permite notificar cambios de estado mediante el subscribe()
+
